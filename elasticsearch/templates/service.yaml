@@ -53,6 +53,7 @@ metadata:
 {{- else }}
   name: {{ template "elasticsearch.uname" . }}-headless
 {{- end }}
+  namespace: {{ .Release.Namespace }}
   labels:
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
